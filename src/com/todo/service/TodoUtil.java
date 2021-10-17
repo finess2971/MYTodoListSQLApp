@@ -109,17 +109,17 @@ public class TodoUtil {
 		
 		int cycle;
 		
-		if(is_rep == 1) {
+		if(is_rep == 0) {
+			cycle=0;	
+		}else {
 			System.out.print("반복 주기를 입력하십시오 > ");
 			cycle = sc.nextInt();
-		}else {
-			cycle=0;
 		}
 		
 		TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date, is_comp, is_rep, cycle);
 		t.setId(id);
 		if(l.editItem(t)>0){
-			System.out.println("항목이 수정되었습니다");
+			System.out.println(id +"번 항목이 수정되었습니다");
 		}
 		
 	}
